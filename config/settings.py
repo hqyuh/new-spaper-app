@@ -38,10 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd
+    'crispy_forms',  # new
+
     #
-    'accounts'  # new
+    'accounts',  # new
+    'pages',  # new
+    'articles',  # new
 ]
+
+TIME_ZONE = 'Asia/Ho_Chi_Minh'  # new
+
+#
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+#
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -131,3 +143,13 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'  # new
 LOGOUT_REDIRECT_URL = 'home'  # new
 
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+DEFAULT_FROM_EMAIL = 'hoquanghuy0123@gmail.com'
+EMAIL_HOST = 'smtp.mailgun.org'
+EMAIL_HOST_USER = 'postmaster@sandbox8d464f6a3b244774a6081273de4b03d3.mailgun.org'
+EMAIL_HOST_PASSWORD = '5341915685b384cae49fb5485b54bfbf-aff8aa95-c88c1835'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
